@@ -3,89 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Générateur de Certificat</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 500px;
-        }
-        .logo {
-            margin-bottom: 20px;
-        }
-        .logo img {
-            max-width: 50%;
-            height: auto;
-        }
-        h1 {
-            color: #333333;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-top: 10px;
-            color: #555555;
-            text-align: left;
-            font-weight: bold;
-        }
-        input {
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
-        }
-        button {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .certification-icon {
-            margin-top: 20px;
-        }
-        .certification-icon img {
-            width: 50px;
-            height: auto;
-        }
-    </style>
+    <title>SecurityForum - La communauté des experts en cybersécurité</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="logo.jpg" alt="Logo du Forum">
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">Security<span>Forum</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">Fonctionnalités</a></li>
+                    <li><a href="#posts">Articles</a></li>
+                    <li><a href="#certification">Certification</a></li>
+                    <li><a href="#forum">Forum</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <h1>Générateur de Certificat de Participation</h1>
-        <form action="/generate-pdf" method="POST">
-            <label for="firstName">Prénom :</label>
-            <input type="text" id="firstName" name="firstName" required>
-            <label for="lastName">Nom :</label>
-            <input type="text" id="lastName" name="lastName" required>
-            <button type="submit">Générer le PDF</button>
-        </form>
-        <div class="certification-icon">
-            <img src="medaille.png" alt="Icône de Certification">
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Bienvenue sur la communauté des experts en cybersécurité</h1>
+            <p>Rejoignez des milliers de professionnels pour échanger, apprendre et rester informé sur les dernières tendances de la sécurité informatique.</p>
+            <a href="#" class="cta-button">Rejoindre la communauté</a>
         </div>
-    </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-container">
+            <div class="section-heading">
+                <h2>Pourquoi rejoindre SecurityForum</h2>
+                <p>Découvrez les avantages de faire partie de notre communauté d'experts en cybersécurité.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Actualités et veille</h3>
+                    <p>Restez informé des dernières vulnérabilités, exploits et techniques de protection grâce à notre veille constante.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Réseau d'experts</h3>
+                    <p>Échangez avec des professionnels du secteur, partagez vos expériences et développez votre réseau.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Formation continue</h3>
+                    <p>Accédez à des ressources pédagogiques, tutoriels et webinaires exclusifs pour développer vos compétences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section de mise en avant de la certification -->
+    <section class="certification-highlight" id="certification">
+        <div class="highlight-container">
+            <div class="highlight-content">
+                <h2>Valorisez votre participation</h2>
+                <p>Obtenez un certificat officiel attestant de votre participation aux événements, webinaires et formations de SecurityForum.</p>
+                <div class="badge-icon">🏆</div>
+                <a href="certificat.html" class="certificate-button">Générer mon certificat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Posts Section -->
+    <section class="recent-posts" id="posts">
+        <div class="posts-container">
+            <div class="section-heading">
+                <h2>Derniers articles du forum</h2>
+                <p>Découvrez les discussions les plus récentes et pertinentes de notre communauté.</p>
+            </div>
+            <div class="posts-grid">
+                <div class="post-card">
+                    <div class="post-image">
+                        <!-- Place for image: src="/api/placeholder/800/450" alt="Ransomware Article" -->
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <div>Par: Alexandre Dupont</div>
+                            <div>14 mars 2025</div>
+                        </div>
+                        <h3>L'évolution des menaces ransomware en 2025</h3>
+                        <p>Analyse des nouvelles tactiques employées par les groupes de ransomware et les mesures de protection recommandées par les experts.</p>
+                        <a href="#" class="read-more">Lire la suite →</a>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <div class="post-image">
+                        <!-- Place for image: src="/api/placeholder/800/450" alt="Zero Trust Article" -->
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <div>Par: Sophie Martel</div>
+                            <div>2 avril 2025</div>
+                        </div>
+                        <h3>Implémenter une architecture Zero Trust en entreprise</h3>
+                        <p>Guide pratique pour adopter le modèle Zero Trust dans votre organisation, avec retours d'expérience et bonnes pratiques.</p>
+                        <a href="#" class="read-more">Lire la suite →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="stats">
+        <div class="stats-container">
+            <h2>Notre communauté en chiffres</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15K+</h3>
+                    <p>Membres</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8K+</h3>
+                    <p>Discussions</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Webinaires</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Experts certifiés</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>À propos de SecurityForum</h3>
+                <p>Communauté francophone dédiée aux professionnels et passionnés de cybersécurité depuis 2018. Notre mission est de partager les connaissances et promouvoir les bonnes pratiques de sécurité informatique.</p>
+                <div class="social-links">
+                    <a href="#">📱</a>
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#features">Fonctionnalités</a></li>
+                    <li><a href="#posts">Articles</a></li>
+                    <li><a href="#certification">Certification</a></li>
+                    <li><a href="#">Forum</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Ressources</h3>
+                <ul>
+                    <li><a href="#">Tutoriels</a></li>
+                    <li><a href="#">Webinaires</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Glossaire</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Nous contacter</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Partenariats</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 SecurityForum. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
 </html>

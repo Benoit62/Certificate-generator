@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/certificate', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'certificate.html'));
+});
+
 app.post('/generate-pdf', (req, res) => {
     const { firstName, lastName } = req.body;
 

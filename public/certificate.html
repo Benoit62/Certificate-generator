@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Certificat - SecurityForum</title>
+    <style>
+        :root {
+            --primary-color: #143d59;
+            --secondary-color: #f4b41a;
+            --text-color: #333;
+            --light-bg: #f5f7fa;
+            --dark-bg: #112a3c;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo a {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb {
+            background-color: #fff;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb span {
+            color: #999;
+            margin: 0 0.5rem;
+        }
+        
+        /* Main content */
+        main {
+            flex: 1;
+            padding: 3rem 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .page-title h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .certificate-icon {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .certificate-icon span {
+            font-size: 4rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Form styles */
+        .certificate-form {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(20, 61, 89, 0.1);
+        }
+        
+        .btn-generate {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-generate:hover {
+            background-color: #0d2c43;
+        }
+        
+        .info-box {
+            background-color: rgba(244, 180, 26, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-box p {
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: #b8c2cc;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            color: #b8c2cc;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .certificate-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">Security<span>Forum</span></a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="index.html">Accueil</a>
+            <span>›</span>
+            Générateur de certificat
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="page-title">
+                <h1>Générateur de Certificat</h1>
+                <p>Créez votre certificat de participation officiel aux événements SecurityForum</p>
+            </div>
+            
+            <div class="certificate-icon">
+                <span>🏆</span>
+            </div>
+            
+            <div class="certificate-form">
+                <form action="/generate-pdf" method="POST">
+                    <div class="form-group">
+                        <label for="firstName">Prénom</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Nom</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="eventName">Événement</label>
+                        <input type="text" id="eventName" name="eventName" placeholder="Nom de l'événement" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="eventDate">Date de l'événement</label>
+                        <input type="date" id="eventDate" name="eventDate" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-generate">Générer mon certificat</button>
+                </form>
+            </div>
+            
+            <div class="info-box">
+                <h3>À quoi sert ce certificat ?</h3>
+                <p>Ce certificat est une preuve officielle de votre participation aux événements, webinaires et formations organisés par SecurityForum. Il peut être ajouté à votre CV ou portfolio professionnel pour attester de votre engagement dans le domaine de la cybersécurité.</p>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="#">Forum</a>
+                <a href="#">Contact</a>
+                <a href="#">Mentions légales</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 SecurityForum. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
